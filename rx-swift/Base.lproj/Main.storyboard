@@ -24,25 +24,49 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8C-e6-YYm">
-                                <rect key="frame" x="20" y="122" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Bv-99-AeH">
+                                <rect key="frame" x="20" y="122" width="335" height="537"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="qxs-Mt-f8Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="xLG-GT-hmQ">
+                                    <rect key="frame" x="0.0" y="72" width="335" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="2Wc-gX-bZR">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Wc-gX-bZR" id="44O-mm-EMx">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Bv-99-AeH" secondAttribute="bottom" constant="8" id="0ZM-IV-yBx"/>
+                            <constraint firstItem="6Bv-99-AeH" firstAttribute="trailing" secondItem="XvS-ld-J8D" secondAttribute="trailing" id="9zQ-dd-52P"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XvS-ld-J8D" secondAttribute="trailing" constant="20" id="EDD-GA-fET"/>
-                            <constraint firstItem="I8C-e6-YYm" firstAttribute="top" secondItem="XvS-ld-J8D" secondAttribute="bottom" constant="8" id="Xtc-EW-bZc"/>
-                            <constraint firstItem="I8C-e6-YYm" firstAttribute="leading" secondItem="XvS-ld-J8D" secondAttribute="leading" id="bXU-W8-QfD"/>
-                            <constraint firstItem="I8C-e6-YYm" firstAttribute="trailing" secondItem="XvS-ld-J8D" secondAttribute="trailing" id="kNY-gZ-JwM"/>
+                            <constraint firstItem="6Bv-99-AeH" firstAttribute="leading" secondItem="XvS-ld-J8D" secondAttribute="leading" id="fvG-L9-M9L"/>
+                            <constraint firstItem="6Bv-99-AeH" firstAttribute="top" secondItem="XvS-ld-J8D" secondAttribute="bottom" constant="8" id="pEO-G9-uQK"/>
                             <constraint firstItem="XvS-ld-J8D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sPs-OZ-GQS"/>
                             <constraint firstItem="XvS-ld-J8D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="w1I-UA-rmM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="RxBinding" id="X7k-vY-I1p">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="Gq3-lg-KpA">
+                            <connections>
+                                <action selector="didTapClear:" destination="BYZ-38-t0r" id="6Ho-vd-r0U"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="ekg-hp-lNI">
                             <connections>
                                 <action selector="didTapSave:" destination="BYZ-38-t0r" id="19S-ik-bh8"/>
@@ -51,7 +75,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="email" destination="XvS-ld-J8D" id="KWY-hl-CON"/>
-                        <outlet property="errorLabel" destination="I8C-e6-YYm" id="JIg-JO-i4S"/>
+                        <outlet property="tableView" destination="6Bv-99-AeH" id="zP4-0c-uiK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
