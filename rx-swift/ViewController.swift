@@ -27,6 +27,16 @@ class ViewController: UIViewController {
         userViewModel.names.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
             cell.textLabel?.text = element
             }.disposed(by: bag)
+        
+        tableView.rx.itemSelected.subscribe({ [weak self] indexPath in
+            self?.userViewModel.selected(indexPath.element?.row ?? 0)
+        }).disposed(by: bag)
+        
+        tableView.rx.itemDeselected.subscribe({ indexPath in
+            if indexPath.element != nil {
+                print(indexPath.element!.row)
+            }
+        }).disposed(by: bag)
     }
     
     @IBAction func didTapSave(_ sender: Any) {

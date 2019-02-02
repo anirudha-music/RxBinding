@@ -24,6 +24,11 @@ class UserViewModel {
     func clear() {
         names.accept([String]())
     }
+    
+    func selected(_ index: Int) {
+        let name = names.value[index]
+        username.accept(name)
+    }
 }
 
 class Users {
