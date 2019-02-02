@@ -29,6 +29,12 @@ class UserViewModel {
         let name = names.value[index]
         username.accept(name)
     }
+    
+    func deleted(_ index: Int) {
+        var dublicateNames = names.value
+        dublicateNames.remove(at: index)
+        names.accept(dublicateNames)
+    }
 }
 
 class Users {

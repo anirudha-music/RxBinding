@@ -37,6 +37,14 @@ class ViewController: UIViewController {
                 print(indexPath.element!.row)
             }
         }).disposed(by: bag)
+        
+        tableView.rx.itemDeleted.subscribe({ [weak self] indexPath in
+            if indexPath.element != nil {
+                self?.userViewModel.deleted(indexPath.element!.row)
+            }
+        }).disposed(by: bag)
+        
+        tableView.isEditing = true
     }
     
     @IBAction func didTapSave(_ sender: Any) {
