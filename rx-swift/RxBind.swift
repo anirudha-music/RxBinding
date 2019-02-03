@@ -5,6 +5,8 @@
 //  Created by Anirudha Mahale on 02/02/19.
 //  Copyright © 2019 Anirudha Mahale. All rights reserved.
 //
+// The two-way binding doesn't cause an infinite loop because UI elements don't emit values when modified programmatically, they only do it when the user changes the value.
+
 
 import Foundation
 import RxSwift
