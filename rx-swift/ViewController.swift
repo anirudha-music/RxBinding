@@ -55,6 +55,8 @@ class ViewController: UIViewController {
             self.view.endEditing(true)
         }.disposed(by: bag)
         
+        userViewModel.loadUser()
+        
         tableView.isEditing = true
     }
     

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7B3808ADDFDBB6D28EC6CF1A /* Pods_rx_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E882A9A0393F3995BAC4DC2 /* Pods_rx_swift.framework */; };
+		8F0FD351220704D6000156A5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FD350220704D6000156A5 /* NetworkManager.swift */; };
+		8F0FD35322070585000156A5 /* UserNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FD35222070585000156A5 /* UserNetworkManager.swift */; };
 		8F3D772C2205D1B300D1A50B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D772B2205D1B300D1A50B /* AppDelegate.swift */; };
 		8F3D772E2205D1B300D1A50B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D772D2205D1B300D1A50B /* ViewController.swift */; };
 		8F3D77312205D1B300D1A50B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F3D772F2205D1B300D1A50B /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		0C9ABA715A5EE90E07844942 /* Pods-rx-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rx-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-rx-swift/Pods-rx-swift.release.xcconfig"; sourceTree = "<group>"; };
 		57891806DA91D1F23E950616 /* Pods-rx-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rx-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rx-swift/Pods-rx-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		7E882A9A0393F3995BAC4DC2 /* Pods_rx_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rx_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F0FD350220704D6000156A5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8F0FD35222070585000156A5 /* UserNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkManager.swift; sourceTree = "<group>"; };
 		8F3D77282205D1B300D1A50B /* rx-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rx-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3D772B2205D1B300D1A50B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F3D772D2205D1B300D1A50B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 				8F3D772D2205D1B300D1A50B /* ViewController.swift */,
 				8FB012F722060D8500FBD555 /* RxBind.swift */,
 				8F3D773D2205D28700D1A50B /* UserViewModel.swift */,
+				8F0FD350220704D6000156A5 /* NetworkManager.swift */,
+				8F0FD35222070585000156A5 /* UserNetworkManager.swift */,
 				8F3D772F2205D1B300D1A50B /* Main.storyboard */,
 				8F3D77322205D1B400D1A50B /* Assets.xcassets */,
 				8F3D77342205D1B400D1A50B /* LaunchScreen.storyboard */,
@@ -188,17 +194,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rx-swift/Pods-rx-swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -214,6 +224,8 @@
 			files = (
 				8F3D772E2205D1B300D1A50B /* ViewController.swift in Sources */,
 				8F3D773E2205D28700D1A50B /* UserViewModel.swift in Sources */,
+				8F0FD351220704D6000156A5 /* NetworkManager.swift in Sources */,
+				8F0FD35322070585000156A5 /* UserNetworkManager.swift in Sources */,
 				8FB012F822060D8500FBD555 /* RxBind.swift in Sources */,
 				8F3D772C2205D1B300D1A50B /* AppDelegate.swift in Sources */,
 			);
