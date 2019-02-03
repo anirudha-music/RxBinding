@@ -8,12 +8,11 @@
 
 import Foundation
 import RxSwift
-import Alamofire
 
 class UserNetworkManager: NetworkManager {
     func getUser() -> Observable<Data?> {
         return Observable.create({ (observable) -> Disposable in
-            let requestRef = self.request("https://httpbin.org/json", method: .get, parameters: nil, encoding: URLEncoding(destination: .methodDependent), headers: nil)
+            let requestRef = self.request("https://httpbin.org/delay/1", method: .post, parameters: nil, headers: nil)
             
                 .responseJSON(completionHandler: { (resp) in
                     if resp.response?.statusCode == 200 {

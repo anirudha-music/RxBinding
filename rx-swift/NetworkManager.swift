@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class NetworkManager {
-    func request(_ url: URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil) -> DataRequest {
-            return Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
+    func request(_ url: URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, headers: HTTPHeaders? = nil) -> DataRequest {
+            return Alamofire.request(url, method: method, parameters: parameters, encoding: URLEncoding(destination: .methodDependent), headers: headers)
     }
 }
