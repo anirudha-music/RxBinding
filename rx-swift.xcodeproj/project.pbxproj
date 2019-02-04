@@ -17,6 +17,7 @@
 		8F3D77362205D1B400D1A50B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F3D77342205D1B400D1A50B /* LaunchScreen.storyboard */; };
 		8F3D773E2205D28700D1A50B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D773D2205D28700D1A50B /* UserViewModel.swift */; };
 		8FB012F822060D8500FBD555 /* RxBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB012F722060D8500FBD555 /* RxBind.swift */; };
+		8FE2CC18220882E5007ECB6F /* BaseRxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE2CC17220882E5007ECB6F /* BaseRxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8F3D77372205D1B400D1A50B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F3D773D2205D28700D1A50B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		8FB012F722060D8500FBD555 /* RxBind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBind.swift; sourceTree = "<group>"; };
+		8FE2CC17220882E5007ECB6F /* BaseRxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				8FB012F722060D8500FBD555 /* RxBind.swift */,
 				8F3D773D2205D28700D1A50B /* UserViewModel.swift */,
 				8F0FD350220704D6000156A5 /* NetworkManager.swift */,
+				8FE2CC17220882E5007ECB6F /* BaseRxViewController.swift */,
 				8F0FD35222070585000156A5 /* UserNetworkManager.swift */,
 				8F3D772F2205D1B300D1A50B /* Main.storyboard */,
 				8F3D77322205D1B400D1A50B /* Assets.xcassets */,
@@ -224,6 +227,7 @@
 			files = (
 				8F3D772E2205D1B300D1A50B /* ViewController.swift in Sources */,
 				8F3D773E2205D28700D1A50B /* UserViewModel.swift in Sources */,
+				8FE2CC18220882E5007ECB6F /* BaseRxViewController.swift in Sources */,
 				8F0FD351220704D6000156A5 /* NetworkManager.swift in Sources */,
 				8F0FD35322070585000156A5 /* UserNetworkManager.swift in Sources */,
 				8FB012F822060D8500FBD555 /* RxBind.swift in Sources */,

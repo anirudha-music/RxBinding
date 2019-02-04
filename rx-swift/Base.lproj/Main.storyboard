@@ -62,19 +62,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="RxBinding" id="X7k-vY-I1p">
-                        <barButtonItem key="leftBarButtonItem" title="Clear" id="Gq3-lg-KpA">
-                            <connections>
-                                <action selector="didTapClear:" destination="BYZ-38-t0r" id="6Ho-vd-r0U"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="ekg-hp-lNI">
-                            <connections>
-                                <action selector="didTapSave:" destination="BYZ-38-t0r" id="19S-ik-bh8"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="Gq3-lg-KpA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="ekg-hp-lNI"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="clearButton" destination="Gq3-lg-KpA" id="4zd-50-3by"/>
                         <outlet property="email" destination="XvS-ld-J8D" id="KWY-hl-CON"/>
+                        <outlet property="saveButton" destination="ekg-hp-lNI" id="1UL-h1-eGA"/>
                         <outlet property="tableView" destination="6Bv-99-AeH" id="zP4-0c-uiK"/>
                     </connections>
                 </viewController>
