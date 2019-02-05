@@ -14,6 +14,7 @@ class BaseRxViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    // UITextField Bind
     func bind(_ view: UITextField, to observable: BehaviorRelay<String?>) {
         view.rx.text
             .orEmpty
@@ -28,6 +29,28 @@ class BaseRxViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
+    func bind(_ view: UITextField, to observable: PublishSubject<String?>) {
+        view.rx.text
+            .orEmpty
+            .bind(to: observable)
+            .disposed(by: disposeBag)
+    }
+    
+    func bind(_ view: UITextField, to observable: BehaviorSubject<String?>) {
+        view.rx.text
+            .orEmpty
+            .bind(to: observable)
+            .disposed(by: disposeBag)
+    }
+    
+    func bind(_ view: UITextField, to observable: ReplaySubject<String?>) {
+        view.rx.text
+            .orEmpty
+            .bind(to: observable)
+            .disposed(by: disposeBag)
+    }
+    
+    // UITextView Bind
     func bind(_ view: UITextView, to observable: BehaviorRelay<String?>) {
         view.rx.text
             .orEmpty
@@ -42,6 +65,28 @@ class BaseRxViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
+    func bind(_ view: UITextView, to observable: PublishSubject<String?>) {
+        view.rx.text
+            .orEmpty
+            .bind(to: observable)
+            .disposed(by: disposeBag)
+    }
+    
+    func bind(_ view: UITextView, to observable: BehaviorSubject<String?>) {
+        view.rx.text
+            .orEmpty
+            .bind(to: observable)
+            .disposed(by: disposeBag)
+    }
+    
+    func bind(_ view: UITextView, to observable: ReplaySubject<String?>) {
+        view.rx.text
+            .orEmpty
+            .bind(to: observable)
+            .disposed(by: disposeBag)
+    }
+    
+    // UIButton tap 
     func tap(_ view: UIButton, completion: @escaping ()->()) {
         view.rx.tap.bind {
             completion()
