@@ -5,6 +5,7 @@ target 'rx-swift' do
   # Pods for rx-swift
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'RxDataSources'
     pod 'IQKeyboardManagerSwift'
     pod 'Alamofire'
     pod 'SwiftyJSON'
