@@ -18,6 +18,7 @@
 		8F3D773E2205D28700D1A50B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D773D2205D28700D1A50B /* UserViewModel.swift */; };
 		8FB012F822060D8500FBD555 /* RxBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB012F722060D8500FBD555 /* RxBind.swift */; };
 		8FE2CC18220882E5007ECB6F /* BaseRxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE2CC17220882E5007ECB6F /* BaseRxViewController.swift */; };
+		8FE2CC1A2209D98D007ECB6F /* struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE2CC192209D98D007ECB6F /* struct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8F3D773D2205D28700D1A50B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		8FB012F722060D8500FBD555 /* RxBind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBind.swift; sourceTree = "<group>"; };
 		8FE2CC17220882E5007ECB6F /* BaseRxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRxViewController.swift; sourceTree = "<group>"; };
+		8FE2CC192209D98D007ECB6F /* struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = struct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				8F3D772D2205D1B300D1A50B /* ViewController.swift */,
 				8FB012F722060D8500FBD555 /* RxBind.swift */,
 				8F3D773D2205D28700D1A50B /* UserViewModel.swift */,
+				8FE2CC192209D98D007ECB6F /* struct.swift */,
 				8F0FD350220704D6000156A5 /* NetworkManager.swift */,
 				8FE2CC17220882E5007ECB6F /* BaseRxViewController.swift */,
 				8F0FD35222070585000156A5 /* UserNetworkManager.swift */,
@@ -233,6 +236,7 @@
 				8F3D773E2205D28700D1A50B /* UserViewModel.swift in Sources */,
 				8FE2CC18220882E5007ECB6F /* BaseRxViewController.swift in Sources */,
 				8F0FD351220704D6000156A5 /* NetworkManager.swift in Sources */,
+				8FE2CC1A2209D98D007ECB6F /* struct.swift in Sources */,
 				8F0FD35322070585000156A5 /* UserNetworkManager.swift in Sources */,
 				8FB012F822060D8500FBD555 /* RxBind.swift in Sources */,
 				8F3D772C2205D1B300D1A50B /* AppDelegate.swift in Sources */,

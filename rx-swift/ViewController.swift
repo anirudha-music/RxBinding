@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class ViewController: BaseRxViewController {
     
@@ -24,48 +25,30 @@ class ViewController: BaseRxViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Binding the textfield and datasource, If value from anyone of them is changed the same value will be reflected in the other one.
-        (email.rx.text <-> userViewModel.username).disposed(by: disposeBag)
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData>(
+            configureCell: { dataSource, tableView, indexPath, item in
+                if indexPath.section == 0 {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                    cell.textLabel?.text = "Item \(item.anInt): \(item.aString) - \(item.aCGPoint.x):\(item.aCGPoint.y)"
+                    return cell
+                } else {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "red", for: indexPath)
+                    cell.textLabel?.text = "Item \(indexPath.row)"
+                    return cell
+                }
+
+        })
         
-        // populating the tableView using the datasource.
-        userViewModel.names.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
-            cell.textLabel?.text = element
-            }.disposed(by: disposeBag)
+        let sections = [
+            SectionOfCustomData(header: "First section", items: [CustomData(anInt: 0, aString: "zero", aCGPoint: CGPoint.zero), CustomData(anInt: 1, aString: "one", aCGPoint: CGPoint(x: 1, y: 1)) ]),
+            SectionOfCustomData(header: "Second section", items: [CustomData(anInt: 2, aString: "two", aCGPoint: CGPoint(x: 2, y: 2)), ])
+        ]
         
-        // subscribes to tableView itemSelect topic to show it in the textFiel.
-        tableView.rx.itemSelected.subscribe({ [weak self] indexPath in
-            self?.userViewModel.selected(indexPath.element?.row ?? 0)
-        }).disposed(by: disposeBag)
+        Observable.just(sections)
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
         
-        // just prints the previously selected row index
-        tableView.rx.itemDeselected.subscribe({ indexPath in
-            if indexPath.element != nil {
-                print(indexPath.element!.row)
-            }
-        }).disposed(by: disposeBag)
         
-        // Subscribe to tableView delete event so to remove object from the datasource.
-        tableView.rx.itemDeleted.subscribe({ [weak self] indexPath in
-            if indexPath.element != nil {
-                self?.userViewModel.deleted(indexPath.element!.row)
-            }
-        }).disposed(by: disposeBag)
         
-        userViewModel.names.subscribe { [weak self] (_) in
-            guard let `self` = self else { return }
-            self.view.endEditing(true)
-        }.disposed(by: disposeBag)
-        
-        userViewModel.loadUser()
-        
-        tableView.isEditing = true
-        
-        tap(clearButton) { [weak self] in
-            self?.userViewModel.clear()
-        }
-        
-        tap(saveButton) { [weak self] in
-            self?.userViewModel.add()
-        }
     }
 }
